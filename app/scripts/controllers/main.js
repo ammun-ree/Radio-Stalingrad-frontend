@@ -8,10 +8,18 @@
  * Controller of the radioStalingradApp
  */
 angular.module('radioStalingradApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, $rootScope ,$translate , LocaleService) {
+                  $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
+
+                  $scope.localesDisplayNames = LocaleService.getLocalesDisplayNames();
+                  $scope.visible = $scope.localesDisplayNames &&
+                  $scope.localesDisplayNames.length > 1;
+
+                  $scope.changeLanguage = function (locale) {
+                      LocaleService.setLocaleByDisplayName(locale);
+                      $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
+                      $rootScope.currentLocale = LocaleService.getCurrentLocale();
+
+
+                  };
   });

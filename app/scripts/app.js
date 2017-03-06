@@ -15,9 +15,21 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.translate',// angular-translate
+    'tmh.dynamicLocale'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .constant('LOCALES', {
+    'locales': {
+        'fr': 'français',
+        'ar': 'العربية'
+    },
+    'preferredLocale': 'fr'
+})
+.run(function($rootScope, $translate) {
+    $rootScope.currentLocale = $translate.proposedLanguage();
+})
+  .config(function ($routeProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -37,7 +49,18 @@ angular
 
 
 // use the HTML5 History API
- $locationProvider.html5Mode(true);
+ $locationProvider.html5Mode(true)
 
+
+ // Translation provider
+$translateProvider.useMissingTranslationHandlerLog();
+$translateProvider.useStaticFilesLoader({
+        prefix: 'resources/locale-',// path to translations files
+        suffix: '.json'// suffix, currently- extension of the translations
+    });
+    $translateProvider.preferredLanguage('fr');// is applied on first load
+    $translateProvider.useLocalStorage();// saves selected language to localStorage
+
+    tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
 
   });
