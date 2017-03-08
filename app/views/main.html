@@ -1,5 +1,8 @@
 <div class="section group">
   <div class="col span_12_of_12">
     <!--img class="bg-homepage" src="images/homepage-fr.jpg"/-->
+    <div ng-repeat="podcast in podcasts">
+      {{podcast.current_translation.title}}
+    </div>
   </div>
 </div>

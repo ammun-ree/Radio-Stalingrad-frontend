@@ -31,8 +31,10 @@ angular
     $rootScope.currentLocale = $translate.proposedLanguage();
     $rootScope.Language = Language;
 })
+
   .config(function ($routeProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider) {
-    $routeProvider
+
+  $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
@@ -60,11 +62,9 @@ angular
 
 
 
-// use the HTML5 History API
-$locationProvider.html5Mode({
-               enabled: true,
-               requireBase: false
-        });
+$locationProvider
+        .html5Mode(true)
+        .hashPrefix('!');
 
  // Translation provider
 $translateProvider.useMissingTranslationHandlerLog();
