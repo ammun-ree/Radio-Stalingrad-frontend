@@ -22,12 +22,14 @@ angular
   .constant('LOCALES', {
     'locales': {
         'fr': 'français',
+        'en': 'english',
         'ar': 'العربية'
     },
     'preferredLocale': 'fr'
 })
-.run(function($rootScope, $translate) {
+.run(function($rootScope, $translate, Language) {
     $rootScope.currentLocale = $translate.proposedLanguage();
+    $rootScope.Language = Language;
 })
   .config(function ($routeProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider) {
     $routeProvider
@@ -41,6 +43,16 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
+      .when('/podcasts', {
+        templateUrl: 'views/podcasts.html',
+        controller: 'PodcastCtrl',
+        controllerAs: 'podcast'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -49,8 +61,10 @@ angular
 
 
 // use the HTML5 History API
- $locationProvider.html5Mode(true)
-
+$locationProvider.html5Mode({
+               enabled: true,
+               requireBase: false
+        });
 
  // Translation provider
 $translateProvider.useMissingTranslationHandlerLog();

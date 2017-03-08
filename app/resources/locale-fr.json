@@ -1,4 +1,7 @@
 {
     "views.main.Splendid!": "splendide",
-    "directives.language-select.Language": "Langue"
+    "directives.language-select.Language": "Langue",
+    "menu.podcasts": "Podcasts",
+    "menu.about": "À propos",
+    "menu.contact": "Nous contacter"
 }

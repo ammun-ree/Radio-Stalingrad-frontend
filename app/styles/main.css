@@ -7,8 +7,12 @@
 
 body {
   padding: 0;
-}
+  font-family: 'Noto Sans', sans-serif;
 
+}
+.rtl{
+font-family: 'Cairo', sans-serif;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -59,9 +63,7 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+
 
   /* Remove the padding we set earlier */
   .header,
@@ -72,10 +74,146 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+
+/*Grid System*/
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWELVE  */
+.span_12_of_12 {
+	width: 100%;
+}
+
+.span_11_of_12 {
+  	width: 91.53%;
+}
+.span_10_of_12 {
+  	width: 83.06%;
+}
+
+.span_9_of_12 {
+  	width: 74.6%;
+}
+
+.span_8_of_12 {
+  	width: 66.13%;
+}
+
+.span_7_of_12 {
+  	width: 57.66%;
+}
+
+.span_6_of_12 {
+  	width: 49.2%;
+}
+
+.span_5_of_12 {
+  	width: 40.73%;
+}
+
+.span_4_of_12 {
+  	width: 32.26%;
+}
+
+.span_3_of_12 {
+  	width: 23.8%;
+}
+
+.span_2_of_12 {
+  	width: 15.33%;
+}
+
+.span_1_of_12 {
+  	width: 6.866%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+
+    .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+	width: 100%;
+	}
+}
+
+
+
+/* Lists */
+
+.H-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.H-list li{
+  margin-left:2px;
+float:left; /*pour IE*/
+}
+#languageList{
+  float: right;
+}
+
+#languageList li a{
+margin: 0px 10px;
+color: blue;
+cursor: pointer;
+}
+.rtl #languageList{
+  float: left;
+}
+.rtl #MenuList{
+  float: right;
+}
+#MenuList li a{
+margin: 0px 10px;
+color: black;
+cursor: pointer;
+font-weight: bold;
+text-decoration: none;
+}
+#MenuList li a:hover{
+margin: 0px 10px;
+cursor: pointer;
+font-weight: bold;
+text-decoration: none;
+}
+
+/* Wrappers */
+
+.wrapper{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+
+/* homepage */
+
+.bg-homepage{
+  width: 100%;
 }
