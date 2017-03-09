@@ -1,8 +1,16 @@
 <div class="section group">
   <div class="col span_12_of_12">
-    <!--img class="bg-homepage" src="images/homepage-fr.jpg"/-->
+    <img class="bg-homepage" src="images/homepage-fr.jpg"/>
     <div ng-repeat="podcast in podcasts">
       {{podcast.current_translation.title}}
+      {{podcast.current_translation.text}}
+      {{podcast.audio_file_path}}
+
+      <div class="podcast_PlayPause" ng-controller="PodcastplayerCtrl">
+        <a ng-click="PlayOnRoot(podcast)" ng-show="CurrentAudio == null || AudioPlaing == false || CurrentAudio != podcast"><img class="blueButton" src="{{play_blueIcon}}" /></a>
+        <a ng-click="PauseOnRoot(podcast)" ng-show="CurrentAudio == podcast && AudioPlaing == true"><img class="blueButton" src="{{pause_blueIcon}}" /></a>
+
+      </div>
     </div>
   </div>
 </div>

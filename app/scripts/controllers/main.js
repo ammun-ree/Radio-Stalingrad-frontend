@@ -9,11 +9,25 @@
  */
 angular.module('radioStalingradApp')
   .controller('MainCtrl', function ($scope, $rootScope ,$translate , LocaleService, Podcasts, TranslationExtractor) {
-                  $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
 
+                  $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
                   $scope.localesDisplayNames = LocaleService.getLocalesDisplayNames();
                   $scope.visible = $scope.localesDisplayNames &&
                   $scope.localesDisplayNames.length > 1;
+
+
+                  /* RootScope Audio Player
+                  $scope.play_blueIcon = "images/play_blue.svg";
+                  $scope.pause_blueIcon = "images/pause_blue.svg";
+                  $scope.PlayOnRoot = function (podcast) {
+                    $rootScope.CurrentAudio = podcast;
+                    $rootScope.AudioPlaing = true;
+
+                  }
+                  $scope.PauseOnRoot = function (podcast) {
+                    $rootScope.AudioPlaing = false;
+                  }
+                     RootScope Audio Player */
 
                   $scope.changeLanguage = function (locale) {
                       LocaleService.setLocaleByDisplayName(locale);
@@ -22,7 +36,7 @@ angular.module('radioStalingradApp')
                     };
 
 
-                
+
                     // APi Calls to handel translation
                     $rootScope.$watch("currentLocale", function(newValue, oldValue) {
                       Podcasts.getData().then(function(response) {

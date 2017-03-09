@@ -3,5 +3,7 @@
     "directives.language-select.Language": "اللغة",
     "menu.podcasts": "الحلقات",
     "menu.about": "الإذاعة",
-    "menu.contact": "إتصل بنا"
+    "menu.contact": "إتصل بنا",
+    "menu.home": "الرئيسية"
+
 }

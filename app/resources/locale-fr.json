@@ -3,5 +3,7 @@
     "directives.language-select.Language": "Langue",
     "menu.podcasts": "Podcasts",
     "menu.about": "À propos",
-    "menu.contact": "Nous contacter"
+    "menu.contact": "Nous contacter",
+    "menu.home": "Acceuil"
+
 }

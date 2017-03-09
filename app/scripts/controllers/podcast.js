@@ -8,10 +8,8 @@
  * Controller of the radioStalingradApp
  */
 angular.module('radioStalingradApp')
-  .controller('PodcastCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('PodcastCtrl', function ($scope) {
+
+
+
   });

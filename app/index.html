@@ -15,22 +15,25 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mirza:400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/freeuniversal" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Mirza:400,500,600,700" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/koodak" type="text/css"/>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/midan-black" type="text/css"/>
   </head>
-  <body ng-app="radioStalingradApp" class="wrapper" ng-class="{'rtl':Language.isRtl()}" >
+  <body ng-app="radioStalingradApp"  ng-class="{'rtl':Language.isRtl()}" >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
 
-    <div  ng-include="'includes/header.html'" ng-controller="MainCtrl"></div>
+    <div  ng-include="'includes/header.html'" class="wrapper" ng-controller="MainCtrl"></div>
 
-    <div class="container" >
+    <div class="container wrapper" >
     <div ng-view=""></div>
     </div>
 
+    <div  ng-include="'includes/audioPlayer.html'" ng-controller="AudioplayerCtrl"></div>
 
 
 
@@ -60,6 +63,8 @@
     <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
     <script src="bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+    <script src="bower_components/angular-audio-player/angular-audio-player.min.js"></script>
+    <script src="bower_components/angular-media-player/dist/angular-media-player.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -73,6 +78,8 @@
         <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/services/podcasts.js"></script>
         <script src="scripts/services/translationextractor.js"></script>
+        <script src="scripts/controllers/audioplayer.js"></script>
+        <script src="scripts/controllers/podcastplayer.js"></script>
         <!-- endbuild -->
 </body>
 </html>

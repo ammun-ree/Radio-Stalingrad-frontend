@@ -1,0 +1,8 @@
+<div class="languagesBadges">
+  <ul class="V-list" id="languageList" ng-if="Language.isRtl()">
+    <li ng-repeat="locale in localesDisplayNames"  ><a ng-click="changeLanguage(locale)">{{locale}}</a></li>
+  </ul>
+  <ul class="V-list" id="languageList" ng-if="!Language.isRtl()">
+    <li ng-repeat="locale in localesDisplayNames"  ><a ng-click="changeLanguage(locale)">{{locale}}</a></li>
+  </ul>
+</div>

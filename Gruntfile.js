@@ -8,6 +8,7 @@ var modRewrite = require('connect-modrewrite');
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  grunt.loadNpmTasks('grunt-nginclude');
 
 
   // Time how long tasks take. Can help when optimizing build times
@@ -386,7 +387,9 @@ module.exports = function (grunt) {
             '*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
-            'resources/{,*/}*.*'
+            'resources/{,*/}*.*',
+            'includes/{,*/}*.*'
+
 
           ]
         }, {

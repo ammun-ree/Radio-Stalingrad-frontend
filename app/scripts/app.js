@@ -17,12 +17,13 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',// angular-translate
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'mediaPlayer'
   ])
   .constant('LOCALES', {
     'locales': {
-        'fr': 'français',
-        'en': 'english',
+        'fr': 'French',
+        'en': 'English',
         'ar': 'العربية'
     },
     'preferredLocale': 'fr'
@@ -30,6 +31,10 @@ angular
 .run(function($rootScope, $translate, Language) {
     $rootScope.currentLocale = $translate.proposedLanguage();
     $rootScope.Language = Language;
+    $rootScope.CurrentAudio = null;
+    $rootScope.AudioPlaing = false;
+
+
 })
 
   .config(function ($routeProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider) {

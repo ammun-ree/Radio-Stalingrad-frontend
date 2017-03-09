@@ -1,0 +1,15 @@
+<div ng-controller="AudioplayerCtrl" class="audioplayer_wrapper">
+<audio media-player="audio1" data-playlist="playlist1">
+    <source src="http://localhost:8888/Radio-Stalingrad/Radio-Stalingrad-backend/public/uploads/medias/audios/podcasts/06-03-2017.mp3" type="audio/mp3">
+  </audio>
+  <!--span ng-show="audio1.playing">Player status: Playing</span>
+  <span ng-show="!audio1.playing">Player status: Paused</span></br-->
+  <div class="PlayPauseButton">
+    <a ng-click="mySpecialPlayButton()" ng-show="!audio1.playing"><img class="playButton" src="{{playIcon}}" /></a>
+    <a ng-click="mySpecialPauseButton()" ng-show="audio1.playing"><img class="pauseButton" src="{{pauseIcon}}" /></a>
+
+  </div>
+  <div class="hp_slide">
+     <div class="hp_range"></div>
+</div>
+</div>
