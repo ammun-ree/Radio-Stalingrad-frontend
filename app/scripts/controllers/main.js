@@ -8,7 +8,7 @@
  * Controller of the radioStalingradApp
  */
 angular.module('radioStalingradApp')
-  .controller('MainCtrl', function ($scope, $rootScope ,$translate , LocaleService, Podcasts, TranslationExtractor) {
+  .controller('MainCtrl', function ($scope, $rootScope ,$translate ,$location, LocaleService, Podcasts, TranslationExtractor) {
 
                   $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
                   $scope.localesDisplayNames = LocaleService.getLocalesDisplayNames();
@@ -42,7 +42,10 @@ angular.module('radioStalingradApp')
                       Podcasts.getData().then(function(response) {
                         $scope.podcasts = response.data.podcasts;
                         TranslationExtractor.GetTranslation($scope.podcasts, $rootScope.currentLocale);
+
                       });
+
+                  
                     });
 
 
@@ -62,4 +65,9 @@ angular.module('radioStalingradApp')
                         }
                       }
                     }*/
+
+                    $scope.isActive = function(locale) {
+
+                      return locale === LocaleService.getLocaleDisplayName();
+                    }
   });

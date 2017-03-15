@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <base href="/">
     <title></title>
     <meta name="description" content="">
 
@@ -19,6 +18,8 @@
 <link href="https://fonts.googleapis.com/css?family=Mirza:400,500,600,700" rel="stylesheet">
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/koodak" type="text/css"/>
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/midan-black" type="text/css"/>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/midan-normal" type="text/css"/>
+
   </head>
   <body ng-app="radioStalingradApp"  ng-class="{'rtl':Language.isRtl()}" >
     <!--[if lte IE 8]>
@@ -33,7 +34,7 @@
     <div ng-view=""></div>
     </div>
 
-    <div  ng-include="'includes/audioPlayer.html'" ng-controller="AudioplayerCtrl"></div>
+    <div  ng-include="'includes/audioPlayer.html'"  ></div>
 
 
 
@@ -50,6 +51,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -65,6 +67,9 @@
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <script src="bower_components/angular-audio-player/angular-audio-player.min.js"></script>
     <script src="bower_components/angular-media-player/dist/angular-media-player.min.js"></script>
+    <script src="bower_components/svg-injector/svg-injector.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-dragdrop/src/angular-dragdrop.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +85,8 @@
         <script src="scripts/services/translationextractor.js"></script>
         <script src="scripts/controllers/audioplayer.js"></script>
         <script src="scripts/controllers/podcastplayer.js"></script>
+        <script src="scripts/directives/isactivelink.js"></script>
+        <script src="scripts/filters/htmlsafe.js"></script>
         <!-- endbuild -->
 </body>
 </html>

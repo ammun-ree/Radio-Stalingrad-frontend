@@ -4,7 +4,11 @@
     "menu.podcasts": "Podcasts",
     "menu.about": "About",
     "menu.contact": "Contact",
-    "menu.home": "Home"
+    "menu.home": "Home",
+    "big-head-wrapper.title" : "Radio<br/>Stalingrad",
+    "big-head-wrapper.sub-title" : "Monday & thursday / 106.3 FM at 1:30 pm / Paris",
+    "audioplayer.broadcast_date" : "Broadcasted : "
+
 
 
 

@@ -20,6 +20,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-cookies/angular-cookies.js',
@@ -35,6 +36,9 @@ module.exports = function(config) {
       'bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
       'bower_components/angular-audio-player/angular-audio-player.min.js',
       'bower_components/angular-media-player/dist/angular-media-player.min.js',
+      'bower_components/svg-injector/svg-injector.js',
+      'bower_components/jquery-ui/jquery-ui.js',
+      'bower_components/angular-dragdrop/src/angular-dragdrop.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

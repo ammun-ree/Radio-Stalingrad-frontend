@@ -7,12 +7,13 @@
 
 body {
   padding: 0;
+  font-size: 16px;
   font-family: 'FreeUniversalRegular';
   font-weight: normal;
   margin: 0;
 }
 .rtl{
-  font-family: 'KoodakRegular';
+
 text-align: right;
 }
 
@@ -190,43 +191,91 @@ float:left; /*pour IE*/
 }
 #languageList{
   float: right;
+font-size: 0.875em;
+line-height: 2.4em;
 }
 
 #languageList li a{
-margin: 0px 10px;
-color: blue;
+font-family: 'FreeUniversalRegular';
+margin: 0px 6px;
+color: #777777;
 cursor: pointer;
 }
-.rtl #languageList{
-  float: left;
-}
-.rtl #MenuList{
-  float: right;
-  font-family: 'MidanBlack';
-  font-size: 1.6em;
+
+#languageList li.active a {
+color: black;
+cursor: pointer;
+font-family: 'FreeUniversalBold';
 }
 #MenuList{
-font-size: 1.2em;
+font-size: 1.5em;
 }
 #MenuList li a{
 margin: 0px 10px;
 color: black;
 cursor: pointer;
-font-weight: bold;
+font-weight: regular;
+
 text-decoration: none;
 }
 #MenuList li a:hover{
 margin: 0px 10px;
 cursor: pointer;
-font-weight: bold;
+font-weight: regular;
 text-decoration: none;
+}
+
+#MenuList li.active a{
+color: #152ee8 !important;
+font-weight: bold;
+font-family: 'FreeUniversalBold' !important;
+}
+
+/** RTL **/
+.rtl #languageList{
+  float: left;
+  font-family: 'MidanRegular' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.2em;
+    line-height: 2em;
+
+}
+.rtl #languageList li a{
+font-family: 'MidanRegular' !important;
+margin: 0px 6px;
+color: #777777;
+cursor: pointer;
+}
+
+.rtl #languageList li.active a {
+color: black;
+cursor: pointer;
+font-family: 'MidanBlack' !important;
+}
+
+.rtl #MenuList{
+  float: right;
+  font-family: 'MidanBlack' !important;
+  font-size: 2em;
+}
+.rtl #MenuList li a{
+margin: 0px 10px;
+color: black;
+cursor: pointer;
+text-decoration: none;
+}
+.rtl #MenuList li.active a{
+color: #152ee8 !important;
+font-weight: bold;
+font-family: 'MidanBlack' !important;
 }
 
 /* Wrappers */
 
 .wrapper{
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 
@@ -242,7 +291,7 @@ text-decoration: none;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background: blue;
+  background: #353535;
   color: white;
   height: 60px;
 }
@@ -250,13 +299,125 @@ text-decoration: none;
   width: 60px;
   height: 60px;
 }
-.hp_slide{
-    width:100%;
-    background:white;
-    height:25px;
+.playButton{
+  background-color: #152ee8;
 }
-.hp_range{
-    width:0;
-    background:black;
-    height:25px;
+.pauseButton{
+  background-color: #e51a2e;
+}
+.CurrentAudioInfo {
+  width: 20%;
+    height: 50px;
+    color: #FFF;
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 70px;
+    padding: 5px;
+}
+.CurrentAudioInfo .title{
+  font-size: 1.125em;
+  font-weight: normal;
+  font-style: normal;
+}
+.CurrentAudioInfo .broadcast_date{
+  font-size: 0.625em;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+.AudioProgressBar{
+  position: absolute;
+    bottom: 0;
+    width: 40%;
+    height: 60px;
+    left: 24%;
+}
+.audio-progress {
+  height: 6px;
+  width: 100%;
+  background-color: #b5b5b5;
+  margin-top: 26px;
+    margin-bottom: 26px;
+}
+.audio-progress .bar {
+  height: 100%;
+  background-color: #152ee8;
+}
+
+#audio-progress-handle {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  margin-top: -6px;
+  margin-left: -10px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #FFF;
+  border-top-color: #FFF;
+  border-right-color: #FFF;
+  transform: rotate(45deg);
+  border-radius: 100%;
+  background-color: #152ee8;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+
+
+.draggable {
+  float: left; margin: 0 10px 10px 0;
+}
+
+/** Big Head Wrapper **/
+.big-head-wrapper{
+height: 400px;
+width: 100%;
+background-image: url('../images/big_bg.png');
+background-position: bottom;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.big-head-wrapper .title{
+text-align: center;
+font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+color: white;
+font-size: 3.750em;
+line-height: 1em;
+margin-top: 30px;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+.big-head-wrapper .sub-title{
+text-align: center;
+font-family: 'FreeUniversalRegular';
+letter-spacing: 1px;
+font-size: 0.875em;
+margin-top: 5px;
+color: white;
+}
+/** RTL **/
+
+.rtl .big-head-wrapper .title{
+  text-align: center;
+  /*font-family: 'TitrBold';*/
+font-family: 'MidanBlack' !important;
+  font-weight: normal;
+  font-style: normal;
+  color: white;
+  font-size: 4.4em;
+  letter-spacing: 0px;
+  line-height: 1.2em;
+  margin-top: 30px;
+}
+
+/* The starting CSS styles for the enter animation */
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
 }

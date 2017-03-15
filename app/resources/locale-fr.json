@@ -4,6 +4,10 @@
     "menu.podcasts": "Podcasts",
     "menu.about": "À propos",
     "menu.contact": "Nous contacter",
-    "menu.home": "Acceuil"
+    "menu.home": "Acceuil",
+    "big-head-wrapper.title" : "Radio<br/>Stalingrad",
+
+    "big-head-wrapper.sub-title" : "Lundi & jeudi / 106.3 FM à 13H30 / Paris",
+    "audioplayer.broadcast_date" : "Diffusé le : "
 
 }

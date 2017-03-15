@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'pascalprecht.translate',// angular-translate
     'tmh.dynamicLocale',
-    'mediaPlayer'
+    'mediaPlayer',
+    'ngDragDrop'
   ])
   .constant('LOCALES', {
     'locales': {
@@ -68,8 +69,8 @@ angular
 
 
 $locationProvider
-        .html5Mode(true)
-        .hashPrefix('!');
+        .html5Mode(false)
+        .hashPrefix('');
 
  // Translation provider
 $translateProvider.useMissingTranslationHandlerLog();
